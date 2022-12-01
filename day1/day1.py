@@ -1,29 +1,11 @@
+print(sorted([sum(map(int, x.split("\n"))) for x in open("in").read().split("\n\n")[:-1]])[:-int(input())-1:-1])
 
-import contextlib
+### Documented version 
+sorted( # sort sums because... u know
+    [
+        sum(map(int, x.split("\n"))) # sum inv of a single came
+        for x in open("in").read().split("\n\n")[:-1] # read input and split into per-camel list
+    ]
+)[:-int(input())-1:-1] # reverse the sort and get the first `n` elements as per stdin input
 
-def main():
-    with open("input.txt") as f:
-        data = f.read().split("\n\n")
-        print(data)
-        totals = []
-        for d in data:
-            nums = d.split("\n")
-            with contextlib.suppress(ValueError):
-                total = max([int(n) for n in nums])
-            # total = sum([int(n) for n in nums])
-            totals.append(total)
-        # highest_cal_count = max([
-        #     sum([
-        #         0 if len(num) else int(num)
-        #         for num in camel_data.split("\n")
-        #     ])
-        #     for camel_data in data
-        # ])
-        # print(highest_cal_count)
-        print(totals)
-        print(max(totals))
-
-
-if __name__ == "__main__":
-    main()
 
