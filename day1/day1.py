@@ -1,6 +1,6 @@
 print(sorted([sum(map(int, x.split("\n"))) for x in open("in").read().split("\n\n")[:-1]])[:-int(input())-1:-1])
 
-### Documented version 
+### less degen version
 sorted( # sort sums because... u know
     [
         sum(map(int, x.split("\n"))) # sum inv of a single came
