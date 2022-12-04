@@ -1,5 +1,3 @@
-
-
 print(
     "Can't read input" if (
         content := list(map(
@@ -20,5 +18,4 @@ print(
         content
     )))
 )
-
 
