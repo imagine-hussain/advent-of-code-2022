@@ -1,6 +1,6 @@
 # Good version
 print(
-    "Can't read input" if (
+    "Bad Input" if (
         content := list(map(
             lambda x: [list(map(int, y.split("-"))) for y in x.strip().split(",")],
             open("in").readlines()
