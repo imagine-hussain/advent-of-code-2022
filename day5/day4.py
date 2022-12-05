@@ -20,7 +20,7 @@ print(
         lambda instruction: map(
             lambda elem: stacks[instruction[2] - 1].append(elem),
             popped if (
-                popped := [stacks[instruction[1] - 1].pop() for _ in range(instruction[0])] is not None and part == 1
+                (popped := [stacks[instruction[1] - 1].pop() for _ in range(instruction[0])]) and part == 1
             ) else popped[::-1]
         ), [
             list(map(int, [components[1], components[3], components[5]]))
@@ -31,4 +31,7 @@ print(
     "\n",
     "".join([stack.pop() for stack in stacks])
 )
+
+# Degen mode
+# print("doing part {part}" if (part := int(input("what part: ")) in [1, 2]) else exit(), map(lambda instruction: map(lambda elem: stacks[instruction[2] - 1].append(elem), popped if (popped := [stacks[instruction[1] - 1].pop() for _ in range(instruction[0])] is not None and part == 1) else popped[::-1]), [ list(map(int, [components[1], components[3], components[5]])) for line in open("in").readlines()[10:] if (components := line.strip().split()) ]), "\n", "".join([stack.pop() for stack in stacks]))
 
